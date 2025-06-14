@@ -1,0 +1,47 @@
+
+package adapterclass;
+import java.awt.FlowLayout;
+import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+public class AdapterClass implements MouseListener {
+    JFrame f;
+    JTextField tf;
+    public AdapterClass(){
+        f = new JFrame();
+        f.setLayout(new FlowLayout());
+        f.setSize(200,200);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        tf = new JTextField(15);
+        f.add(tf);
+        f.addMouseListener(this);
+        f.setVisible(true);
+        
+    }
+
+   
+    public static void main(String[] args) {
+        new AdapterClass();
+    }
+    public void mouseClicked(MouseEvent e){
+        tf.setText("Clicked at x: "+ e.getX()+", y "+ e.getY());
+    }
+
+   
+    public void mousePressed(MouseEvent e) {
+       
+    }
+
+   
+    public void mouseReleased(MouseEvent e) {
+       
+    }
+
+   
+    public void mouseEntered(MouseEvent e) {
+    }
+
+   
+    public void mouseExited(MouseEvent e) {
+    }
+}
